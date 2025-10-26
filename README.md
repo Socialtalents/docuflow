@@ -1,2 +1,204 @@
-# mongodb-state
-mongodb-state documentation and samples.
+# DocuFlow
+
+**MongoDB State Management Tool** - Export, import, and migrate MongoDB collections with ease.
+
+## What is DocuFlow?
+
+DocuFlow is a powerful command-line tool for managing MongoDB database state through file-based workflows. It enables:
+
+- **Version Control** your database schemas and seed data
+- **Environment Synchronization** between development, staging, and production
+- **Data Migrations** using aggregation pipelines
+- **Partial Exports** with custom filters
+- **Index Management** with ensure or replace modes
+
+Perfect for:
+- Database versioning in Git
+- Automated deployments
+- Data migrations and transformations
+- Seeding test environments
+- Backing up specific collections or filtered data
+
+## Installation
+
+### Download Pre-built Binaries
+
+Download the latest release for your platform from the [bin/](bin/) directory:
+
+- **Linux**: `docuflow-linux-amd64`
+- **Windows**: `docuflow-windows-amd64.exe`
+- **macOS Intel**: `docuflow-darwin-amd64`
+- **macOS ARM (M1/M2)**: `docuflow-darwin-arm64`
+
+### Quick Setup
+
+**Linux/macOS:**
+```bash
+# Download the binary
+wget https://github.com/yourusername/docuflow/raw/main/bin/docuflow-linux-amd64
+
+# Make it executable
+chmod +x docuflow-linux-amd64
+
+# Move to a directory in your PATH (optional)
+sudo mv docuflow-linux-amd64 /usr/local/bin/docuflow
+```
+
+**Windows:**
+```powershell
+# Download docuflow-windows-amd64.exe
+# Add the directory to your PATH or run directly
+```
+
+## Quick Start
+
+### Export a Collection
+
+Export all users from your database:
+
+```bash
+docuflow export mongodb://localhost:27017/mydb -c users
+```
+
+This creates files like:
+- `638730123456789.upsert.users-0.json` (data)
+- `638730123456789.ensure-indexes.users.json` (indexes)
+
+### Export with Filter
+
+Export only active users:
+
+```bash
+docuflow export mongodb://localhost:27017/mydb -c users -q '{"status":"active"}'
+```
+
+### Export with Interactive Filter
+
+Prompt for filter at runtime:
+
+```bash
+docuflow export mongodb://localhost:27017/mydb -c users -qp
+```
+
+You'll be prompted:
+```
+Enter filter query (JSON format, or press Enter for no filter):
+{"createdAt": {"$gte": "2024-01-01"}}
+```
+
+### Import Data
+
+Import all files from the current directory:
+
+```bash
+docuflow import mongodb://localhost:27017/mydb
+```
+
+DocuFlow automatically:
+- Detects file types (`.upsert.`, `.update.`, `.ensure-indexes.`, etc.)
+- Tracks imported files in `_syncstate` collection
+- Skips already-imported files
+- Handles indexes and data migrations
+
+### Check Connection Status
+
+Verify your MongoDB connection:
+
+```bash
+docuflow status mongodb://localhost:27017/mydb
+```
+
+## File Formats
+
+DocuFlow uses a timestamp-based naming convention:
+
+### Data Files
+```
+{ticks}.upsert.{collection}-{partition}.json
+{ticks}.import.{collection}-{partition}.json
+{ticks}.update.{collection}.json
+```
+
+### Index Files
+```
+{ticks}.ensure-indexes.{collection}.json
+{ticks}.replace-indexes.{collection}.json
+```
+
+## Common Workflows
+
+### Seed Development Database
+
+```bash
+# Export production data with filter
+docuflow export mongodb://prod:27017/app -c users -q '{"role":"admin"}'
+
+# Import to local database
+docuflow import mongodb://localhost:27017/app-dev
+```
+
+### Version Control Workflow
+
+```bash
+# Export current state
+docuflow export mongodb://localhost:27017/mydb -c config
+
+# Commit to git
+git add *.json
+git commit -m "Update config data"
+
+# Deploy to staging
+git pull
+docuflow import mongodb://staging:27017/mydb -c config
+```
+
+### Data Migration
+
+```bash
+# Create migration template
+docuflow update-template backfill-field -c users
+
+# Edit the generated file
+# Then apply migration
+docuflow import mongodb://localhost:27017/mydb
+```
+
+## Documentation
+
+- [Export Guide](Documentation/export.md) - Complete export options and examples
+- [Import Guide](Documentation/import.md) - Import modes and data migrations
+- [Update Migrations](Documentation/migrations.md) - Data transformation using aggregation pipelines
+- [Examples](examples/) - Ready-to-use example files
+
+## Licensing
+
+DocuFlow requires a license for non-localhost MongoDB hosts. Place your license file (e.g., `db.example.com-a3f9.license`) in the same directory as the executable.
+
+**Localhost connections are always free** - no license required for development!
+
+Contact us for licensing information.
+
+## Support
+
+- **Issues**: [GitHub Issues](https://github.com/yourusername/docuflow/issues)
+- **Documentation**: [Documentation/](Documentation/)
+- **Examples**: [examples/](examples/)
+
+## Features
+
+- Multiple export modes - full collection, filtered, or partitioned
+- Flexible imports - insert, upsert, or update operations
+- Index management - ensure or replace modes
+- Query filters - inline, from file, or interactive prompt
+- State tracking - prevents duplicate imports
+- Data migrations - aggregation pipeline transformations
+- Batch processing - handles large collections efficiently
+- Cross-platform - Linux, Windows, macOS (Intel & ARM)
+
+## Version
+
+Current version: 1.0.0
+
+---
+
+Built for MongoDB developers who love version control.

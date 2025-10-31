@@ -8,7 +8,6 @@ Complete guide to exporting MongoDB collections with DocuFlow.
 - [Export Options](#export-options)
 - [Query Filters](#query-filters)
 - [Index Export](#index-export)
-- [Batch Size](#batch-size)
 - [Examples](#examples)
 
 ## Basic Usage

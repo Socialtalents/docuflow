@@ -1,6 +1,6 @@
 # DocuFlow
 
-**MongoDB State Management Tool** - Export, import, and migrate MongoDB collections with ease.
+**Docuflow for MongoDB - State Management Tool** - Export, import, and migrate MongoDB collections with ease.
 
 ## What is DocuFlow?
 
@@ -52,17 +52,24 @@ sudo mv docuflow-linux-amd64 /usr/local/bin/docuflow
 
 ## Quick Start
 
+### Check Connection Status
+
+Verify your MongoDB connection:
+
+```bash
+docuflow status mongodb://localhost:27017/mydb
+```
+
 ### Export a Collection
 
-Export all users from your database:
+Export all documents from your database:
 
 ```bash
 docuflow export mongodb://localhost:27017/mydb -c users
 ```
 
 This creates files like:
-- `638730123456789.upsert.users-0.json` (data)
-- `638730123456789.ensure-indexes.users.json` (indexes)
+- `638730123456789.upsert.users-0.json`
 
 ### Export with Filter
 
@@ -86,6 +93,17 @@ Enter filter query (JSON format, or press Enter for no filter):
 {"createdAt": {"$gte": "2024-01-01"}}
 ```
 
+### Export Collection Indexes
+
+Export all indexes documents dor your colleciton:
+
+```bash
+docuflow export mongodb://localhost:27017/mydb -c users --indexes
+```
+
+This creates files like:
+- `638730123456789.ensure-indexes.users.json`
+
 ### Import Data
 
 Import all files from the current directory:
@@ -99,14 +117,6 @@ DocuFlow automatically:
 - Tracks imported files in `_syncstate` collection
 - Skips already-imported files
 - Handles indexes and data migrations
-
-### Check Connection Status
-
-Verify your MongoDB connection:
-
-```bash
-docuflow status mongodb://localhost:27017/mydb
-```
 
 ## File Formats
 
@@ -165,23 +175,23 @@ docuflow import mongodb://localhost:27017/mydb
 
 ## Documentation
 
-- [Export Guide](Documentation/export.md) - Complete export options and examples
-- [Import Guide](Documentation/import.md) - Import modes and data migrations
-- [Update Migrations](Documentation/migrations.md) - Data transformation using aggregation pipelines
+- [Export Guide](docs/export.md) - Complete export options and examples
+- [Import Guide](docs/import.md) - Import modes and data migrations
+- [Update Migrations](docs/migrations.md) - Data transformation using aggregation pipelines
 - [Examples](examples/) - Ready-to-use example files
 
 ## Licensing
 
 DocuFlow requires a license for non-localhost MongoDB hosts. Place your license file (e.g., `db.example.com-a3f9.license`) in the same directory as the executable.
 
-**Localhost connections are always free** - no license required for development!
+**Localhost connections are always free** - no license required for development/testing!
 
 Contact us for licensing information.
 
 ## Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/docuflow/issues)
-- **Documentation**: [Documentation/](Documentation/)
+- **Issues**: [GitHub Issues](https://github.com/socialtalents/docuflow/issues)
+- **Documentation**: [docs/](docs/)
 - **Examples**: [examples/](examples/)
 
 ## Features

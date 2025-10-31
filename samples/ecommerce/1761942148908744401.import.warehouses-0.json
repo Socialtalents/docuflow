@@ -1,0 +1,218 @@
+[
+  {
+    "_id": "wh_001",
+    "name": "Pacific Northwest Distribution Center",
+    "location": {
+      "type": "Point",
+      "coordinates": [-122.3321, 47.6062]
+    },
+    "address": {
+      "street": "1234 Industrial Way",
+      "city": "Seattle",
+      "state": "WA",
+      "zipCode": "98101",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 500000,
+    "type": "regional"
+  },
+  {
+    "_id": "wh_002",
+    "name": "Southern California Fulfillment Hub",
+    "location": {
+      "type": "Point",
+      "coordinates": [-118.2437, 34.0522]
+    },
+    "address": {
+      "street": "5678 Logistics Blvd",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": "90001",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 750000,
+    "type": "primary"
+  },
+  {
+    "_id": "wh_003",
+    "name": "Texas Central Warehouse",
+    "location": {
+      "type": "Point",
+      "coordinates": [-97.7431, 30.2672]
+    },
+    "address": {
+      "street": "9012 Distribution Pkwy",
+      "city": "Austin",
+      "state": "TX",
+      "zipCode": "73301",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 450000,
+    "type": "regional"
+  },
+  {
+    "_id": "wh_004",
+    "name": "East Coast Main Facility",
+    "location": {
+      "type": "Point",
+      "coordinates": [-74.0060, 40.7128]
+    },
+    "address": {
+      "street": "3456 Commerce Ave",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 600000,
+    "type": "primary"
+  },
+  {
+    "_id": "wh_005",
+    "name": "Midwest Distribution Hub",
+    "location": {
+      "type": "Point",
+      "coordinates": [-87.6298, 41.8781] 
+    },
+    "address": {
+      "street": "7890 Warehouse Dr",
+      "city": "Chicago",
+      "state": "IL",
+      "zipCode": "60601",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 550000,
+    "type": "primary"
+  },
+  {
+    "_id": "wh_006",
+    "name": "Southeast Regional Center",
+    "location": {
+      "type": "Point",
+      "coordinates": [-80.1918, 25.7617]
+    },
+    "address": {
+      "street": "2345 Shipping Lane",
+      "city": "Miami",
+      "state": "FL",
+      "zipCode": "33101",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 400000,
+    "type": "regional"
+  },
+  {
+    "_id": "wh_007",
+    "name": "Phoenix Desert Warehouse",
+    "location": {
+      "type": "Point",
+      "coordinates": [-112.0740, 33.4484] 
+    },
+    "address": {
+      "street": "6789 Desert Commerce Rd",
+      "city": "Phoenix",
+      "state": "AZ",
+      "zipCode": "85001",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 380000,
+    "type": "secondary"
+  },
+  {
+    "_id": "wh_008",
+    "name": "Rocky Mountain Distribution",
+    "location": {
+      "type": "Point",
+      "coordinates": [-104.9903, 39.7392]
+    },
+    "address": {
+      "street": "4567 Mountain View Pkwy",
+      "city": "Denver",
+      "state": "CO",
+      "zipCode": "80201",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 425000,
+    "type": "regional"
+  },
+  {
+    "_id": "wh_009",
+    "name": "Boston Metro Facility",
+    "location": {
+      "type": "Point",
+      "coordinates": [-71.0589, 42.3601]
+    },
+    "address": {
+      "street": "8901 Harbor Point Blvd",
+      "city": "Boston",
+      "state": "MA",
+      "zipCode": "02101",
+      "country": "USA"
+    },
+    "status": "maintenance",
+    "capacity": 320000,
+    "type": "secondary"
+  },
+  {
+    "_id": "wh_010",
+    "name": "Atlanta Logistics Center",
+    "location": {
+      "type": "Point",
+      "coordinates": [-84.3880, 33.7490]
+    },
+    "address": {
+      "street": "1234 Peachtree Industrial",
+      "city": "Atlanta",
+      "state": "GA",
+      "zipCode": "30301",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 480000,
+    "type": "regional"
+  },
+  {
+    "_id": "wh_011",
+    "name": "Portland Distribution Point",
+    "location": {
+      "type": "Point",
+      "coordinates": [-122.6765, 45.5152]
+    },
+    "address": {
+      "street": "5678 River Commerce Way",
+      "city": "Portland",
+      "state": "OR",
+      "zipCode": "97201",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 340000,
+    "type": "secondary"
+  },
+  {
+    "_id": "wh_012",
+    "name": "Dallas-Fort Worth Megahub",
+    "location": {
+      "type": "Point",
+      "coordinates": [-96.7970, 32.7767] 
+    },
+    "address": {
+      "street": "9012 Metroplex Distribution Ctr",
+      "city": "Dallas",
+      "state": "TX",
+      "zipCode": "75201",
+      "country": "USA"
+    },
+    "status": "active",
+    "capacity": 850000,
+    "type": "primary"
+  }
+]

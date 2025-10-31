@@ -25,7 +25,7 @@ Perfect for:
 
 Download the latest release for your platform from our download page:
 
-[Downloads](https://www.socialtalents.com/docuflow/0.9.2/download.html)
+[Downloads](https://www.socialtalents.com/docuflow/0.9.3/download.html)
 
 ### Request full license
 

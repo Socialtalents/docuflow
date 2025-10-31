@@ -13,16 +13,15 @@ Complete guide to exporting MongoDB collections with DocuFlow.
 
 ## Basic Usage
 
-Export a collection:
+Export a collection documents:
 
 ```bash
 docuflow export mongodb://localhost:27017/mydb -c users
 ```
 
-This creates two types of files:
+This creates data files in JSON format:
 
-1. **Data files**: `{ticks}.upsert.{collection}-{partition}.json`
-2. **Index files**: `{ticks}.ensure-indexes.{collection}.json`
+`{ticks}.upsert.{collection}-{partition}.json`
 
 ## Export Options
 
@@ -100,6 +99,7 @@ Enter your query (or press Enter for no filter):
 
 ## Index Export
 
+
 ### Ensure Mode (Default)
 
 Export indexes without removing existing ones:
@@ -127,23 +127,10 @@ When imported:
 - Indexes NOT in the file are removed
 - The `_id` index is always preserved
 
-## Batch Size
-
-Control how many documents per file:
-
-```bash
-# 50,000 documents per file
-docuflow export mongodb://localhost:27017/mydb -c users -b 50000
-```
-
-**Default**: 10,000 documents per file
-**Maximum**: 100,000 documents per file
-
-Large collections are automatically split:
-- `{ticks}.upsert.users-0.json` (first 10,000)
-- `{ticks}.upsert.users-1.json` (next 10,000)
-- `{ticks}.upsert.users-2.json` (next 10,000)
-- etc.
+In _real world scenario_ you would need following deployment pattern:
+- create new indexes in Ensure mode 
+- deploy new code
+- Remove old indexes using replace mode
 
 ## Examples
 
@@ -166,16 +153,10 @@ docuflow export mongodb://localhost:27017/mydb -c orders \
 docuflow export mongodb://localhost:27017/mydb -c logs -b 50000
 ```
 
-### Export Products with Replace Indexes
+### Replace indexes for Products collection
 
 ```bash
 docuflow export mongodb://localhost:27017/mydb -c products --replace-indexes
-```
-
-### Export Config Collection (Small Data)
-
-```bash
-docuflow export mongodb://localhost:27017/mydb -c config -b 100
 ```
 
 ### Complex Filter from File
@@ -230,11 +211,13 @@ docuflow export mongodb://localhost:27017/mydb -c orders
 docuflow export mongodb://localhost:27017/mydb -c products --replace-indexes
 ```
 
-## File Output
+## File name format
 
 ### Data Files
 
 Format: `{ticks}.upsert.{collection}-{partition}.json`
+
+Files are 
 
 Example:
 ```

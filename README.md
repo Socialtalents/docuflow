@@ -23,12 +23,16 @@ Perfect for:
 
 ### Download Pre-built Binaries
 
-Download the latest release for your platform from the [bin/](bin/) directory:
+Download the latest release for your platform from our download page:
 
-- **Linux**: `docuflow-linux-amd64`
-- **Windows**: `docuflow-windows-amd64.exe`
-- **macOS Intel**: `docuflow-darwin-amd64`
-- **macOS ARM (M1/M2)**: `docuflow-darwin-arm64`
+[https://s3.us-east-2.amazonaws.com/socialtalents.com/docuflow/0.9.2/download.html](Downloads)
+
+### Request full license
+
+You may use it freely for localhost database. In case you are ready to use it in production please request license here: 
+
+[https://forms.office.com/r/uwB9ZH47UU](Microsoft Form to request license)
+
 
 ### Quick Setup
 

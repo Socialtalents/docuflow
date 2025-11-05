@@ -1,23 +1,36 @@
-# DocuFlow
+# DocuFlow - MongoDB Schema Change Management & Migration Tool
 
-**Docuflow for MongoDB - State Management Tool** - Export, import, and migrate MongoDB collections with ease.
+**Version-controlled MongoDB database management** - Export, import, and migrate MongoDB collections and indexes in your CI/CD pipeline.
 
 ## What is DocuFlow?
 
-DocuFlow is a powerful command-line tool for managing MongoDB database state through file-based workflows. It enables:
+DocuFlow is a powerful command-line tool for MongoDB schema change management and database state management through file-based workflows. It enables:
 
-- **Version Control** your database schemas and seed data
-- **Environment Synchronization** between development, staging, and production
-- **Data Migrations** using aggregation pipelines
-- **Partial Exports** with custom filters
-- **Index Management** with ensure or replace modes
+- **Schema Version Control** - Track database schemas, indexes, and seed data in Git
+- **Schema Migration** - Apply controlled changes across environments
+- **Environment Synchronization** - Keep development, staging, and production in sync
+- **Data Migrations** - Transform data using MongoDB aggregation pipelines
+- **Partial Exports** - Export filtered datasets with custom queries
+- **Index Management** - Ensure or replace indexes across deployments
 
 Perfect for:
-- Database versioning in Git
-- Automated deployments
+- MongoDB schema versioning and GitOps workflows
+- CI/CD and automated database deployments
+- Database change management in development pipelines
 - Data migrations and transformations
 - Seeding test environments
 - Backing up specific collections or filtered data
+
+## Use Cases
+
+### Schema Change Management
+Track and apply MongoDB schema changes across environments. DocuFlow enables database-as-code practices by storing schemas, indexes, and migrations in version control.
+
+### CI/CD Integration
+Incorporate DocuFlow into your continuous integration and deployment pipeline for automated database updates. Perfect for GitOps workflows and infrastructure as code practices.
+
+### MongoDB DevOps
+Streamline MongoDB operations with file-based state management. Handle index changes, data migrations, and environment synchronization as part of your DevOps workflow.
 
 ## Installation
 
@@ -197,14 +210,16 @@ Contact us for licensing information.
 
 ## Features
 
-- Multiple export modes - full collection, filtered, or partitioned
-- Flexible imports - insert, upsert, or update operations
-- Index management - ensure or replace modes
-- Query filters - inline, from file, or interactive prompt
-- State tracking - prevents duplicate imports
-- Data migrations - aggregation pipeline transformations
-- Batch processing - handles large collections efficiently
-- Cross-platform - Linux, Windows, macOS (Intel & ARM)
+- **Schema versioning** - Track MongoDB schemas in Git
+- **Multiple export modes** - Full collection, filtered, or partitioned
+- **Flexible imports** - Insert, upsert, or update operations
+- **Index management** - Ensure or replace indexes with change tracking
+- **Query filters** - Inline, from file, or interactive prompt
+- **State tracking** - Prevents duplicate imports with sync state
+- **Data migrations** - Aggregation pipeline transformations
+- **Batch processing** - Handles large collections efficiently
+- **CI/CD ready** - Integrate with automated deployment pipelines
+- **Cross-platform** - Linux, Windows, macOS (Intel & ARM)
 
 ## Version
 

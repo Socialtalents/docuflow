@@ -16,7 +16,7 @@ DocuFlow is a powerful command-line tool for MongoDB schema change management an
 Perfect for:
 - MongoDB schema versioning and GitOps workflows
 - CI/CD and automated database deployments
-- Database change management in development pipelines
+- Database change management with code review practices
 - Data migrations and transformations
 - Seeding test environments
 - Backing up specific collections or filtered data
@@ -24,10 +24,10 @@ Perfect for:
 ## Use Cases
 
 ### Schema Change Management
-Track and apply MongoDB schema changes across environments. DocuFlow enables database-as-code practices by storing schemas, indexes, and migrations in version control.
+Track and apply MongoDB schema changes across environments. DocuFlow enables database-as-code practices by storing schemas, indexes, and migrations in version control. Review database changes through pull requests just like application code.
 
 ### CI/CD Integration
-Incorporate DocuFlow into your continuous integration and deployment pipeline for automated database updates. Perfect for GitOps workflows and infrastructure as code practices.
+Incorporate DocuFlow into your continuous integration and deployment pipeline for automated database updates. Perfect for GitOps workflows and infrastructure as code practices. Enable code review processes for database changes before deployment.
 
 ### MongoDB DevOps
 Streamline MongoDB operations with file-based state management. Handle index changes, data migrations, and environment synchronization as part of your DevOps workflow.
@@ -171,7 +171,10 @@ docuflow export mongodb://localhost:27017/mydb -c config
 git add *.json
 git commit -m "Update config data"
 
-# Deploy to staging
+# Create pull request for review
+git push origin feature/update-config
+
+# After code review and merge, deploy to staging
 git pull
 docuflow import mongodb://staging:27017/mydb -c config
 ```

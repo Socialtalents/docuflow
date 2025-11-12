@@ -10,7 +10,8 @@
     "key": {
       "login": 1
     },
-    "name": "login_1",
+    "name": "login_unique",
+    "unique": true,
     "v": 2
   }
 ]

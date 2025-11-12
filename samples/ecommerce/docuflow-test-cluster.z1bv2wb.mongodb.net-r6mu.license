@@ -1,0 +1,7 @@
+{
+  "hosts": [
+    "docuflow-test-cluster.z1bv2wb.mongodb.net"
+  ],
+  "expiresAt": "2026-11-12T19:08:25.4206872Z",
+  "signature": "bvsOciqAiO/r03xIqciiVR1Y1VJ2yHC3km2uPhLPTTIvgc1ABql2ezaIhusyu/6LCGS80dwZKw9KyG7270gNCQ=="
+}

@@ -1,3 +1,7 @@
+# 0.9.5
+
+Added as NPM Package
+
 # 0.9.4
 
 Download page fixed

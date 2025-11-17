@@ -13,6 +13,12 @@ This sample shows:
 
 ## Building File based database state
 
+Install docuflow globally using npm:
+
+```bash
+npm install -g @socialtalents/docuflow
+```
+
 ### 1. Seed Admin User
 
 Export the initial admin user for your application:

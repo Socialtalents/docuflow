@@ -1,3 +1,7 @@
+# 0.9.6
+
+NPM Package cleanup
+
 # 0.9.5
 
 Added as NPM Package

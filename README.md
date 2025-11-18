@@ -34,22 +34,40 @@ Streamline MongoDB operations with file-based state management. Handle index cha
 
 ## Installation
 
+### Via NPM (Recommended)
+
+Install globally using npm:
+
+```bash
+npm install -g @socialtalents/docuflow
+```
+
+Or use with npx without installing:
+
+```bash
+npx @socialtalents/docuflow status mongodb://localhost:27017/mydb
+```
+
+**Advantages:**
+- ✅ Automatic platform detection (Linux, macOS, Windows)
+- ✅ Automatic architecture detection (x64, ARM64)
+- ✅ Easy updates with `npm update -g @socialtalents/docuflow`
+- ✅ Works with Node.js version managers (nvm, fnm)
+- ✅ No manual PATH configuration needed
+
 ### Download Pre-built Binaries
 
 Download the latest release for your platform from our download page:
 
-[Downloads](https://www.socialtalents.com/docuflow/0.9.4/download.html)
+[Downloads](https://www.socialtalents.com/docuflow/latest/index.html)
 
-### Request full license
-
-You may use it freely for localhost database. In case you are ready to use it in production please [request license here](https://forms.office.com/r/uwB9ZH47UU)
-
-### Quick Setup
+**Manual Setup:**
 
 **Linux/macOS:**
 ```bash
-# Download the binary
-wget https://github.com/yourusername/docuflow/raw/main/bin/docuflow-linux-amd64
+# Download the binary for your platform
+# For Linux x64:
+wget https://www.socialtalents.com/docuflow/docuflow-linux-amd64
 
 # Make it executable
 chmod +x docuflow-linux-amd64
@@ -60,9 +78,13 @@ sudo mv docuflow-linux-amd64 /usr/local/bin/docuflow
 
 **Windows:**
 ```powershell
-# Download docuflow-windows-amd64.exe
+# Download docuflow-windows-amd64.exe from the download page
 # Add the directory to your PATH or run directly
 ```
+
+### Request Full License
+
+You may use it freely for localhost database. In case you are ready to use it in production please [request license here](https://forms.office.com/r/uwB9ZH47UU)
 
 ## Quick Start
 

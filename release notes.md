@@ -1,3 +1,11 @@
+# 0.9.6
+
+NPM Package cleanup
+
+# 0.9.5
+
+Added as NPM Package
+
 # 0.9.4
 
 Download page fixed
